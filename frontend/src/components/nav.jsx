@@ -9,8 +9,8 @@ function Nav() {
   const handleClick = (key) => {
     setActive(key);
     setMenuOpen(false);
-    if (key === 'pricing') {
-      navigate('/pricing');
+    if (key === 'blog') {
+      navigate('/blog');
     } else {
       navigate('/');
       const section = document.getElementById(key);
@@ -70,6 +70,17 @@ function Nav() {
               Testimonial
             </a>
           </li>
+
+          <li className="nav-item">
+            <a
+              className={`nav-link ${active === 'pricing' ? 'active' : ''}`}
+              href="#pricing"
+              onClick={() => handleClick('pricing')}
+            >
+              Pricing Plan
+            </a>
+          </li>
+
           <li className="nav-item">
             <a
               className={`nav-link ${active === 'contact' ? 'active' : ''}`}
@@ -81,11 +92,11 @@ function Nav() {
           </li>
           <li className="nav-item">
             <a
-              className={`nav-link ${active === 'pricing' ? 'active' : ''}`}
-              href="#pricing"
-              onClick={() => handleClick('pricing')}
+              className={`nav-link ${active === 'blog' ? 'active' : ''}`}
+              href="#blog"
+              onClick={() => handleClick('blog')}
             >
-              Pricing Plan
+              Read Our Blog
             </a>
           </li>
         </ul>

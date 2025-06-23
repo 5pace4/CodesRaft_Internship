@@ -7,6 +7,7 @@ import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Testimonial from '../components/Testimonial';
+import Pricing from '../components/Pricing';
 
 function Index() {
   return (
@@ -28,6 +29,9 @@ function Index() {
       </section>
       <section id="testimonial">
         <Testimonial />
+      </section>
+      <section id="pricing">
+        <Pricing />
       </section>
       <section id="contact">
         <Contact />
