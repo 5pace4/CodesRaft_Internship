@@ -101,9 +101,12 @@ function Nav() {
           </li>
         </ul>
 
-        <div className="d-flex">
+        <div className="button-group">
           <button className="btn btn-outline-success" type="button">
-            Get a Free Quote
+            SignIn
+          </button>
+          <button className="btn btn-outline-success" type="button">
+            SignUp
           </button>
         </div>
       </div>
