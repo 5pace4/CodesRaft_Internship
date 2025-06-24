@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import blogPosts from '../assets/data/blogdata';
+import blogPosts from './.assets/data/blogdata.js'; //file renmaed in directory
 
 function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
