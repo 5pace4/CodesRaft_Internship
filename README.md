@@ -1,4 +1,4 @@
-# CodesRaft_Internship
+# HelloMello
 
 This project is a fully responsive with integrated **blog pages**, **dynamic routing**, and smooth scrolling navigation. It includes dedicated sections for services, testimonials, pricing plans, contact, and blog posts all styled consistently using custom CSS and React components.
 
