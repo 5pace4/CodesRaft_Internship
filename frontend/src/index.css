@@ -82,48 +82,53 @@
 }
 .button-group {
   display: flex;
-  gap: 1rem; 
+  gap: 1rem;
+}
+.mobile-buttons {
+  display: none;
 }
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 30px;
+  position: relative;
+  z-index: 1001;
 }
 
 .hamburger span {
   height: 3px;
-  width: 25px;
+  width: 100%;
   background: white;
   border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
 
-  .navbar-nav {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: #0d1117;
-    flex-direction: column;
-    text-align: center;
-    display: none;
-    padding: 1rem 0;
-    gap: 1rem;
-    z-index: 10;
-  }
-
-  .navbar-nav.show {
-    display: flex;
-  }
-
-  .d-flex {
-    display: none;
-  }
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 50%;
 }
 
 /* Hero CSS */
@@ -181,24 +186,6 @@
   max-width: 80%;
   height: auto;
   border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-  .hero-content {
-    margin-right: 0;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-direction: column;
-  }
 }
 
 /* About CSS */
@@ -269,17 +256,6 @@
 
 .call-icon {
   margin-right: 10px;
-}
-
-@media (max-width: 768px) {
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  .about-text {
-    padding-left: 0;
-  }
 }
 
 /* Mission css */
@@ -414,7 +390,7 @@
 
 @media (max-width: 768px) {
   .mission-section {
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
   }
 
   .mission-container {
@@ -466,14 +442,20 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
 .service-card {
   background-color: white;
-  padding: 1.5rem;
-  width: 22%;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  padding: 2rem;
+  width: calc(33.333% - 2rem);
+  box-shadow: 0 4px 15px rgba(8, 8, 8, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
 }
 
 .service-card img {
@@ -504,24 +486,6 @@
 
 .read-more:hover {
   color: #8ca78c;
-}
-
-@media (max-width: 768px) {
-  .mission-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  .services-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-card {
-    width: 80%;
-    margin-bottom: 1rem;
-  }
 }
 
 /* faq css */
@@ -617,25 +581,6 @@
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .faq-section {
-    padding: 2rem 1rem;
-  }
-
-  .faq-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .faq-left {
-    padding-right: 0;
-    margin-bottom: 1rem;
-  }
-
-  .faq-right {
-    text-align: center;
-  }
-}
 /* contact css */
 .contact-section {
   background-color: #fff;
@@ -703,22 +648,6 @@
   color: #333;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 2rem 1rem;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contact-form,
-  .contact-details {
-    width: 100%;
-  }
 }
 
 /* Footer CSS */
@@ -837,21 +766,6 @@
   font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-  .footer {
-    padding: 2rem 1rem;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-column {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-}
 /* testimonial section */
 .testimonial-section {
   background-color: #fff;
@@ -872,16 +786,17 @@
 .testimonial-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
+  justify-content: center;
 }
 
 .testimonial-card {
   background-color: #dcddd5;
   border-radius: 10px;
   padding: 2rem;
-  width: calc(33% - 1rem);
-  box-shadow: 0 4px 15px rgba(8, 8, 8, 0.05);
+  flex: 1 1 calc(33.333% - 2 rem);
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgb(8, 8, 8, 0.05);
   transition: transform 0.3s ease;
   text-align: left;
 }
@@ -909,28 +824,6 @@
   font-size: 1rem;
   color: #333;
   line-height: 1.5;
-}
-
-/* Tablet: 2 cards per row */
-@media (max-width: 992px) {
-  .testimonial-card {
-    width: calc(50% - 1rem);
-  }
-}
-
-/* Mobile: 1 card per row */
-@media (max-width: 600px) {
-  .testimonial-card {
-    width: 100%;
-  }
-
-  .testimonial-container h2 {
-    font-size: 1.8rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.95rem;
-  }
 }
 
 /* pricing section */
@@ -999,15 +892,121 @@
   left: 0;
 }
 
+/* Responsiveness */
 @media (max-width: 992px) {
+  .service-card,
+  .testimonial-card,
   .pricing-card {
     flex: 1 1 calc(45% - 1rem);
   }
 }
 
 @media (max-width: 768px) {
-  .pricing-section {
+  .desktop-buttons {
+    display: none;
+  }
+  .mobile-buttons {
+    display: block;
+    width: 100%;
+  }
+  .mobile-buttons .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #0d1117;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    padding: 1rem 0;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .d-flex {
+    display: none;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero-content {
+    margin-right: 0;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about-section {
+    flex-direction: column;
+    text-align: center;
     padding: 2rem 1rem;
+  }
+  .about-text {
+    padding-left: 0;
+  }
+
+  .faq-section,
+  .contact-section,
+  .footer,
+  .pricing-section,
+  .testimonial-section {
+    padding: 5rem 1rem;
+  }
+  .service-card,
+  .mission-column,
+  .testimonial-card {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .mission-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 1rem;
+  }
+  .faq-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .faq-left {
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .faq-right {
+    text-align: center;
+  }
+
+  .testimonial-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+  .social-icons {
+    justify-content: center;
   }
 
   .pricing-cards {
@@ -1018,5 +1017,24 @@
   .pricing-card {
     width: 100%;
     max-width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form,
+  .contact-details {
+    width: 100%;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }

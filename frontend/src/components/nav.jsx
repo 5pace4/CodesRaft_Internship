@@ -27,7 +27,10 @@ function Nav() {
           OurBrand
         </a>
 
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -99,9 +102,19 @@ function Nav() {
               Read Our Blog
             </a>
           </li>
+          <li className="nav-items mobile-buttons">
+            <div className="button-group">
+              <button className="btn btn-outline-success" type="button">
+                SignIn
+              </button>
+              <button className="btn btn-outline-success" type="button">
+                SignUp
+              </button>
+            </div>
+          </li>
         </ul>
 
-        <div className="button-group">
+        <div className="button-group desktop-buttons">
           <button className="btn btn-outline-success" type="button">
             SignIn
           </button>
