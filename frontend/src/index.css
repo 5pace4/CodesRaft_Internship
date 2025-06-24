@@ -456,7 +456,7 @@ body {
   background-color: white;
   border-radius: 10px;
   padding: 2rem;
-  width: calc(33.333% - 2rem);
+  width: calc(50% - 2rem);
   box-shadow: 0 4px 15px rgba(8, 8, 8, 0.05);
   transition: transform 0.3s ease;
   text-align: left;
@@ -798,7 +798,7 @@ body {
   background-color: #dcddd5;
   border-radius: 10px;
   padding: 2rem;
-  flex: 1 1 calc(33.333% - 2 rem);
+  flex: 1 1 calc(33.333% - 2rem);
   max-width: 400px;
   box-shadow: 0 4px 15px rgb(8, 8, 8, 0.05);
   transition: transform 0.3s ease;
