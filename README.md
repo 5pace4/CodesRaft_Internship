@@ -30,10 +30,10 @@ Technology used:
 
 ```bash
 # Clone the repository
-git clone https://github.com/5pace4/CodesRaft_Internship.git
+git clone https://github.com/5pace4/hellomello.git
 
 # Go into the project directory
-cd CodesRaft_Internship
+cd hellomello
 cd frontend
 
 # Install dependencies
