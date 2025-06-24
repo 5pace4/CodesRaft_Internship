@@ -896,6 +896,135 @@ body {
   left: 0;
 }
 
+/* blog page */
+.blog-section {
+  background-color: #f7f9fc;
+  padding: 2rem 10rem;
+  margin-top: 4rem;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.blog-post {
+  background-color: white;
+  padding: 2rem;
+  flex: 1 1 calc(33.333% - 2rem);
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.blog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.blog-post-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.blog-excerpt {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.blog-link {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #ffe203;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.blog-link:hover {
+  background-color: transparent;
+  border: 2px solid #ffe203;
+  color: #ffe203;
+}
+
+/* Blog Details Page Styling */
+.blog-post-section {
+  background-color: #fff;
+  padding: 2rem 10rem;
+  margin-top: 5rem;
+}
+
+.blog-post-full {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blog-post-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.blog-post-content {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.back-btn {
+  cursor: pointer;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #2a9d8f;
+  color: #2a9d8f;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover,
+.pagination button.active {
+  background-color: #2a9d8f;
+  color: #fff;
+}
 /* Responsiveness */
 @media (max-width: 992px) {
   .service-card,
@@ -968,7 +1097,7 @@ body {
   .about-text {
     padding-left: 0;
   }
-
+  .blog-section,
   .faq-section,
   .contact-section,
   .footer,
@@ -1040,5 +1169,19 @@ body {
   .footer-column {
     width: 100%;
     margin-bottom: 1rem;
+  }
+
+  .blog-post {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .blog-section,
+  .blog-post-section {
+    padding: 2rem 1rem;
+  }
+
+  .blog-post-full {
+    padding: 0 1rem;
   }
 }
