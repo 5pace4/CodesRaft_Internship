@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import blogPosts from './.assets/data/blogdata.js'; //file renmaed in directory
+import blogPosts from '../data/blogdata'; //file renmaed in directory
 
 function BlogPost() {
   const { id } = useParams();
