@@ -69,6 +69,9 @@ function Footer() {
           <p>Thursday: 09:00 am - 09:00 pm</p>
           <p>Saturday, Friday: Closed</p>
         </div>
+        <div className="copyright">
+          all rights reserved &copy; 2025 tofayelahmmedbabu
+        </div>
       </div>
     </footer>
   );
