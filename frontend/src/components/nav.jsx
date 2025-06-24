@@ -96,7 +96,7 @@ function Nav() {
           <li className="nav-item">
             <a
               className={`nav-link ${active === 'blog' ? 'active' : ''}`}
-              href="#blog"
+              href=""
               onClick={() => handleClick('blog')}
             >
               Read Our Blog
